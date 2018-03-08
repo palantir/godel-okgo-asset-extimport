@@ -17,6 +17,7 @@ package integration_test
 import (
 	"os"
 	"path"
+	"strings"
 	"testing"
 
 	"github.com/nmiyake/pkg/dirs"
@@ -65,12 +66,14 @@ func TestExtimport(t *testing.T) {
 	})
 	require.NoError(t, err)
 
-	newGoPath := os.Getenv("GOPATH")
-	if newGoPath != "" {
-		newGoPath += ":"
+	origGoPath := os.Getenv("GOPATH")
+	if origGoPath != "" {
+		defer func() {
+			err = os.Setenv("GOPATH", origGoPath)
+			require.NoError(t, err)
+		}()
 	}
-	newGoPath += tmpGoPathDir
-	err = os.Setenv("GOPATH", newGoPath)
+	err = os.Setenv("GOPATH", strings.Join([]string{origGoPath, tmpGoPathDir}, ":"))
 	require.NoError(t, err)
 
 	okgotester.RunAssetCheckTest(t,
