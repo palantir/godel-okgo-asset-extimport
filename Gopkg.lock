@@ -32,10 +32,10 @@
   version = "1.3.0"
 
 [[projects]]
-  branch = "master"
   name = "github.com/palantir/go-extimport"
   packages = [".","cmd","extimport"]
-  revision = "35fbb30cbe445698e50392631f7988fc4b30d6ec"
+  revision = "7e5a66781ce893ad8968e2c5c4f9d58609989ea4"
+  version = "v1.0.0"
 
 [[projects]]
   branch = "master"
@@ -94,6 +94,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "8c034dc27fa7f351d44eec8ad2cbacfb2571a04bd53d785ec68ca51f651e125f"
+  inputs-digest = "919b5b480462e49465889680313cde1549a7a91b5e868db37c66a2484881d04c"
   solver-name = "gps-cdcl"
   solver-version = 1
