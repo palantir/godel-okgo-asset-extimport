@@ -85,8 +85,8 @@
     "cmd",
     "extimport"
   ]
-  revision = "8235148f60acd81e089f1d387dd6884b6d7c5a19"
-  version = "v1.1.0"
+  revision = "7a15a7396e67f26e1b6f08db2f55ffcfdb8a3dfd"
+  version = "v1.2.0"
 
 [[projects]]
   branch = "master"
@@ -212,6 +212,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "7e63c11c293538b851eaaac276e38b8f3d9352ea002e5370cd2b6b5196422477"
+  inputs-digest = "78cdd0285fd2b83c92ae353b07c0794f87c6a370beefc42622a344b287ca8a62"
   solver-name = "gps-cdcl"
   solver-version = 1
