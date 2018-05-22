@@ -23,17 +23,17 @@ import (
 )
 
 var (
-	rootCmd = &cobra.Command{
-		Use:   "extimport [flags] [packages]",
-		Short: "checks whether project imports any external packages (packages that are not within the project or its vendor directories)",
+	rootCmd	= &cobra.Command{
+		Use:	"extimport [flags] [packages]",
+		Short:	"checks whether project imports any external packages (packages that are not within the project or its vendor directories)",
 		RunE: func(cmd *cobra.Command, args []string) error {
 			return extimport.Run(projectDirFlagVal, args, listFlagVal, allFlagVal, cmd.OutOrStdout())
 		},
 	}
 
-	projectDirFlagVal string
-	listFlagVal       bool
-	allFlagVal        bool
+	projectDirFlagVal	string
+	listFlagVal		bool
+	allFlagVal		bool
 )
 
 func Execute() int {
