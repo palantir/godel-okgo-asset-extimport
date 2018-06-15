@@ -47,8 +47,8 @@ func Run(projectDir string, pkgs []string, list, all bool, w io.Writer) error {
 	printedPkgs := make(map[string]bool)
 
 	type pkgWithSrc struct {
-		pkgPath string
-		srcDir  string
+		pkgPath	string
+		srcDir	string
 	}
 
 	externalImportsExist := false
@@ -64,8 +64,8 @@ func Run(projectDir string, pkgs []string, list, all bool, w io.Writer) error {
 			return errors.Errorf("package %s is not within project directory %q: import path %s is not within %s", srcDir, projectDir, srcDirPkg.ImportPath, projectDirImportPath)
 		}
 		pkgsToProcess = append(pkgsToProcess, pkgWithSrc{
-			pkgPath: ".",
-			srcDir:  srcDir,
+			pkgPath:	".",
+			srcDir:		srcDir,
 		})
 	}
 	processedPkgs := make(map[pkgWithSrc]bool)
@@ -90,8 +90,8 @@ func Run(projectDir string, pkgs []string, list, all bool, w io.Writer) error {
 			// external dependencies (even those multiple levels deep) are listed
 			for _, currExternalPkg := range externalPkgs {
 				externalPkgWithSrc := pkgWithSrc{
-					pkgPath: currExternalPkg,
-					srcDir:  currPkg.srcDir,
+					pkgPath:	currExternalPkg,
+					srcDir:		currPkg.srcDir,
 				}
 				if !processedPkgs[externalPkgWithSrc] {
 					pkgsToProcess = append(pkgsToProcess, externalPkgWithSrc)
@@ -206,14 +206,14 @@ func addImportPosToMap(dst, src map[string][]token.Position) {
 }
 
 type importLine struct {
-	name string
-	pos  token.Position
+	name	string
+	pos	token.Position
 }
 
 type byLineNum []importLine
 
-func (a byLineNum) Len() int      { return len(a) }
-func (a byLineNum) Swap(i, j int) { a[i], a[j] = a[j], a[i] }
+func (a byLineNum) Len() int		{ return len(a) }
+func (a byLineNum) Swap(i, j int)	{ a[i], a[j] = a[j], a[i] }
 func (a byLineNum) Less(i, j int) bool {
 	if a[i].pos.Line == a[j].pos.Line {
 		// if line numbers are the same, do secondary sort by column position
@@ -227,8 +227,8 @@ func fileToImportsMap(importPos map[string][]token.Position) ([]string, map[stri
 	for k, v := range importPos {
 		for _, currPos := range v {
 			output[currPos.Filename] = append(output[currPos.Filename], importLine{
-				name: k,
-				pos:  currPos,
+				name:	k,
+				pos:	currPos,
 			})
 		}
 	}

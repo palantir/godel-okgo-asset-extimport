@@ -1,0 +1,3 @@
+packages:
+  extimport:
+    main: github.com/palantir/go-extimport
