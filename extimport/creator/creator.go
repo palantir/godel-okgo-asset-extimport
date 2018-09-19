@@ -21,6 +21,10 @@ import (
 	"github.com/palantir/godel-okgo-asset-extimport/extimport"
 )
 
+func init() {
+	checker.SetGoBuildDefaultReleaseTags()
+}
+
 func Extimport() checker.Creator {
 	return checker.NewCreator(
 		extimport.TypeName,
