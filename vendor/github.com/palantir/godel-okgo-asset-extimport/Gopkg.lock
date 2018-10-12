@@ -121,22 +121,6 @@
   version = "v2.10.0"
 
 [[projects]]
-  branch = "master"
-  name = "github.com/palantir/godel-okgo-asset-extimport"
-  packages = [
-    "extimport",
-    "extimport/config",
-    "extimport/config/internal/legacy",
-    "extimport/config/internal/v0",
-    "extimport/creator",
-    "generated_src",
-    "generated_src/internal/github.com/palantir/go-extimport",
-    "generated_src/internal/github.com/palantir/go-extimport/cmd",
-    "generated_src/internal/github.com/palantir/go-extimport/extimport",
-  ]
-  revision = "fe8cd726d915120ed10beaccdc8af41aa420d1de"
-
-[[projects]]
   name = "github.com/palantir/okgo"
   packages = [
     "checker",
@@ -228,6 +212,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "723948ad899fd1b8e5381fbd73c41f521957873e538058088896cf8eed022741"
+  inputs-digest = "163e6ab1162056c1a06057c30c516b2900abed0ec17e75d61700b0cd482677f4"
   solver-name = "gps-cdcl"
   solver-version = 1
